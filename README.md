@@ -247,12 +247,98 @@ Cuando es **más importante la velocidad que la precisión**, como en:
 
 ---
 
+### Misión 5: Comunicación Segura o lado oscuro – Criptografía y Seguridad de la Red
 
+#### Cifrado Simétrico
 
+##### ¿Cómo funciona?
 
+- Usa una sola clave secreta para cifrar y descifrar los datos.
+- La misma clave debe ser conocida por emisor y receptor.
 
+##### Ventajas
 
+- Muy rápido y eficiente para grandes volúmenes de datos.
+- Ideal para comunicaciones internas frecuentes.
 
+##### Desventajas
+
+- La clave debe ser intercambiada de forma segura. Si cae en manos enemigas, toda la información está comprometida.
+
+---
+
+#### Cifrado Asimétrico
+
+##### ¿Cómo funciona?
+
+- Utiliza dos claves diferentes pero relacionadas:
+  - Una clave pública (para cifrar).
+  - Una clave privada (para descifrar).
+- Solo el poseedor de la clave privada puede leer el mensaje cifrado con la clave pública.
+
+##### Ventajas
+
+- No es necesario compartir claves secretas de antemano.
+- Ideal para comunicaciones entre partes que no se conocen previamente.
+
+##### Desventajas
+
+- Más lento y computacionalmente costoso que el cifrado simétrico.
+
+---
+
+#### Escenarios de cifrado de mensajes
+
+Si Leia y Luke comparten una frase clave secreta para cifrar sus holomensajes estarían empleando cifrado simético ya que estan usando la misma clave tanto para cifrar como para descifrar los mensajes
+
+Si la Alianza quiere enviar un mensaje a un nuevo aliado sin haber intercambiado una clave secreta previamente emplearán cifrado asimétrico ya que la clave de cifrado del mensaje es pública por lo que la Alianza podrá cogerla y así cifrar su mensaje, sin embargo, la clave para descifrar el mensaje es privada por lo que solo el receptor (asumiendo que tiene esa clave) podrá descifrar el mensaje mandado por la Alianza.
+
+---
+
+#### Autenticación
+
+##### ¿Qué es?
+
+La autenticación permite verificar que un mensaje proviene **realmente de quien dice ser**.
+
+##### ¿Cómo se logra?
+
+Mediante **firmas digitales** y certificados:
+
+- El emisor firma el mensaje con su **clave privada**.
+- El receptor usa la **clave pública del emisor** para verificar esa firma.
+- Si la firma es válida, el mensaje es auténtico y no ha sido modificado.
+
+##### Ejemplo en la Alianza
+
+Leia envía un mensaje cifrado a Mon Mothma. Además de cifrarlo, lo **firma digitalmente**. Mon Mothma puede verificar la firma y confirmar que **nadie se hizo pasar por Leia** ni manipuló el contenido.
+
+---
+
+#### No Repudio
+
+##### ¿Qué es?
+
+El no repudio garantiza que **el autor no puede negar haber enviado el mensaje**.
+
+##### ¿Cómo se logra?
+
+También mediante el uso de **firmas digitales**, que:
+
+- Están unidas al mensaje.
+- Solo pueden ser creadas con la **clave privada del emisor**.
+- No pueden ser falsificadas sin esa clave.
+
+---
+
+#### **Por qué SSH es crucial para la Alianza**
+
+1. **Confidencialidad**: SSH cifra todos los datos, lo que garantiza que las **informaciones sensibles** no puedan ser interceptadas.
+2. **Integridad**: SSH garantiza que los datos no sean **alterados** durante el tránsito.
+3. **Autenticación**: SSH verifica que el **remitente** es quien dice ser, reduciendo el riesgo de **suplantación**.
+4. **No repudio**: La autenticación mediante claves permite rastrear la identidad del usuario, asegurando que **nadie pueda negar sus acciones**.
+
+---
 
 
 

@@ -1,3 +1,5 @@
+Link al repositorio: https://github.com/MarioGonzalo/ExamenParcial2.git
+
 # Examen Final de Redes II: La Restauración de la HoloRed Galáctica
 
 ## Parte I – Misiones de Conocimiento Teórico (60%)
